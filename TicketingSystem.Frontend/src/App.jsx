@@ -1,26 +1,6 @@
+import { Alert, Button, Card, Checkbox, Flex, Form, Input, Typography } from 'antd';
+
 function App() {
-  const {
-    Alert,
-    Button,
-    Card,
-    Checkbox,
-    Flex,
-    Form,
-    Input,
-    Typography,
-  } = window.antd ?? {};
-
-  if (!window.antd) {
-    return (
-      <main className="app-shell">
-        <section className="app-fallback">
-          <h1>Loading Ant Design…</h1>
-          <p>If this message persists, check your internet connection.</p>
-        </section>
-      </main>
-    );
-  }
-
   return (
     <main className="app-shell">
       <Card className="login-card" bordered={false}>
