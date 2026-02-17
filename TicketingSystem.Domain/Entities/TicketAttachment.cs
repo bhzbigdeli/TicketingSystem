@@ -15,4 +15,10 @@ public class TicketAttachment : BaseEntity
         FilePath = filePath;
         TicketId = ticketId;
     }
+    public void UpdateFile(string fileName, string filePath)
+    {
+        FileName = fileName;
+        FilePath = filePath;
+        SetUpdated();
+    }
 }

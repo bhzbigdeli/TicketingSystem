@@ -15,4 +15,9 @@ public class TicketComment : BaseEntity
         TicketId = ticketId;
         UserId = userId;
     }
+    public void UpdateContent(string content)
+    {
+        Content = content;
+        SetUpdated();
+    }
 }

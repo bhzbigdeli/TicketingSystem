@@ -21,7 +21,12 @@ namespace TicketingSystem.Domain.Entities
             PasswordHash = passwordHash;
             Role = role;
         }
-
+        public void UpdateProfile(string fullName, string email)
+        {
+            FullName = fullName;
+            Email = email;
+            SetUpdated();
+        }
         public void ChangeRole(UserRole role)
         {
             Role = role;

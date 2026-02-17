@@ -19,4 +19,13 @@ public class TicketHistory : BaseEntity
         OldValue = oldValue;
         NewValue = newValue;
     }
+
+    public void UpdateChange(Guid changedById, string propertyChanged, string oldValue, string newValue)
+    {
+        ChangedById = changedById;
+        PropertyChanged = propertyChanged;
+        OldValue = oldValue;
+        NewValue = newValue;
+        SetUpdated();
+    }
 }

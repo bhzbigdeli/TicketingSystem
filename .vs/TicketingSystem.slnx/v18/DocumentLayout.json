@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|solutionrelative:ticketingsystem.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\controllers\\tickethistoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\controllers\\tickethistoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.domain\\entities\\tickethistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|solutionrelative:ticketingsystem.domain\\entities\\tickethistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.domain\\entities\\ticketcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|solutionrelative:ticketingsystem.domain\\entities\\ticketcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.domain\\entities\\ticketattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303738DA-B087-CD4D-E09C-3BA4E8D78596}|TicketingSystem.Domain\\TicketingSystem.Domain.csproj|solutionrelative:ticketingsystem.domain\\entities\\ticketattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\contracts\\ticketattachments\\ticketattachmentcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\contracts\\ticketattachments\\ticketattachmentcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\controllers\\ticketcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\controllers\\ticketcommentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\controllers\\ticketattachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\controllers\\ticketattachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\contracts\\user\\usercontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\contracts\\user\\usercontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\contracts\\tickets\\ticketcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\contracts\\tickets\\ticketcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\contracts\\tickethistories\\tickethistorycontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\contracts\\tickethistories\\tickethistorycontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|c:\\users\\behzad\\source\\repos\\ticketingsystem\\ticketingsystem.api\\contracts\\ticketcomments\\ticketcommentcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{158A271C-E1DA-875B-A24F-DCB46B923D7E}|TicketingSystem.Api\\TicketingSystem.Api.csproj|solutionrelative:ticketingsystem.api\\contracts\\ticketcomments\\ticketcommentcontracts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "TicketingSystem.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:49:19.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TicketHistory.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketHistory.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Domain\\Entities\\TicketHistory.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketHistory.cs",
+              "RelativeToolTip": "TicketingSystem.Domain\\Entities\\TicketHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:48:52.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TicketComment.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketComment.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Domain\\Entities\\TicketComment.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketComment.cs",
+              "RelativeToolTip": "TicketingSystem.Domain\\Entities\\TicketComment.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA1wBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:48:14.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TicketAttachment.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketAttachment.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Domain\\Entities\\TicketAttachment.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Domain\\Entities\\TicketAttachment.cs",
+              "RelativeToolTip": "TicketingSystem.Domain\\Entities\\TicketAttachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:47:44.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAqwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:47:03.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TicketHistoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketHistoriesController.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Controllers\\TicketHistoriesController.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketHistoriesController.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Controllers\\TicketHistoriesController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAqwGsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:46:09.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TicketCommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketCommentsController.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Controllers\\TicketCommentsController.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketCommentsController.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Controllers\\TicketCommentsController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAqwHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:45:17.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TicketAttachmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketAttachmentsController.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Controllers\\TicketAttachmentsController.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketAttachmentsController.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Controllers\\TicketAttachmentsController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAqwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:43:45.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserContracts.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\User\\UserContracts.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Contracts\\User\\UserContracts.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\User\\UserContracts.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Contracts\\User\\UserContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:42:37.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TicketHistoryContracts.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketHistories\\TicketHistoryContracts.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Contracts\\TicketHistories\\TicketHistoryContracts.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketHistories\\TicketHistoryContracts.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Contracts\\TicketHistories\\TicketHistoryContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:40:20.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TicketCommentContracts.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketComments\\TicketCommentContracts.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Contracts\\TicketComments\\TicketCommentContracts.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketComments\\TicketCommentContracts.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Contracts\\TicketComments\\TicketCommentContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:38:31.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TicketAttachmentContracts.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketAttachments\\TicketAttachmentContracts.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Contracts\\TicketAttachments\\TicketAttachmentContracts.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\TicketAttachments\\TicketAttachmentContracts.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Contracts\\TicketAttachments\\TicketAttachmentContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T10:12:59.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Controllers\\TicketController.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Controllers\\TicketController.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAqwAcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T15:52:20.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TicketContracts.cs",
+              "DocumentMoniker": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\Tickets\\TicketContracts.cs",
+              "RelativeDocumentMoniker": "TicketingSystem.Api\\Contracts\\Tickets\\TicketContracts.cs",
+              "ToolTip": "C:\\Users\\Behzad\\source\\repos\\TicketingSystem\\TicketingSystem.Api\\Contracts\\Tickets\\TicketContracts.cs",
+              "RelativeToolTip": "TicketingSystem.Api\\Contracts\\Tickets\\TicketContracts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T15:51:03.412Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
