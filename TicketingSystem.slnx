@@ -3,4 +3,5 @@
   <Project Path="TicketingSystem.Application/TicketingSystem.Application.csproj" />
   <Project Path="TicketingSystem.Domain/TicketingSystem.Domain.csproj" />
   <Project Path="TicketingSystem.Infrastructure/TicketingSystem.Infrastructure.csproj" />
+   <Project Path="TicketingSystem.Frontend/TicketingSystem.Frontend.esproj" />
 </Solution>
