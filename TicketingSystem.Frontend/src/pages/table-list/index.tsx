@@ -1,328 +1,240 @@
-import type {
-  ActionType,
-  ProColumns,
-  ProDescriptionsItemProps,
-} from '@ant-design/pro-components';
+import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import {
-  FooterToolbar,
+  ModalForm,
   PageContainer,
-  ProDescriptions,
+  ProFormSelect,
+  ProFormText,
+  ProFormTextArea,
   ProTable,
 } from '@ant-design/pro-components';
-import { FormattedMessage, useIntl, useRequest } from '@umijs/max';
-import { Button, Drawer, Input, message } from 'antd';
-import React, { useCallback, useRef, useState } from 'react';
-import { removeRule, rule } from '@/services/ant-design-pro/api';
-import CreateForm from './components/CreateForm';
-import UpdateForm from './components/UpdateForm';
+import { Button, Popconfirm, Tag, message } from 'antd';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  changeTicketStatus,
+  createTicket,
+  deleteTicket,
+  getTickets,
+  getUsers,
+  type TicketDto,
+  type TicketPriority,
+  type TicketStatus,
+  updateTicket,
+  type UserDto,
+} from '@/services/ticketing';
+
+const priorityMap: Record<TicketPriority, { text: string; color: string }> = {
+  1: { text: 'Low', color: 'default' },
+  2: { text: 'Medium', color: 'blue' },
+  3: { text: 'High', color: 'orange' },
+  4: { text: 'Critical', color: 'red' },
+};
+
+const statusMap: Record<TicketStatus, { text: string; color: string }> = {
+  1: { text: 'Open', color: 'blue' },
+  2: { text: 'In Progress', color: 'gold' },
+  3: { text: 'Resolved', color: 'green' },
+  4: { text: 'Closed', color: 'default' },
+};
 
 const TableList: React.FC = () => {
   const actionRef = useRef<ActionType | null>(null);
-
-  const [showDetail, setShowDetail] = useState<boolean>(false);
-  const [currentRow, setCurrentRow] = useState<API.RuleListItem>();
-  const [selectedRowsState, setSelectedRows] = useState<API.RuleListItem[]>([]);
-
-  /**
-   * @en-US International configuration
-   * @zh-CN 国际化配置
-   * */
-  const intl = useIntl();
-
   const [messageApi, contextHolder] = message.useMessage();
+  const [users, setUsers] = useState<UserDto[]>([]);
+  const [editingTicket, setEditingTicket] = useState<TicketDto | undefined>(undefined);
 
-  const { run: delRun, loading } = useRequest(removeRule, {
-    manual: true,
-    onSuccess: () => {
-      setSelectedRows([]);
-      actionRef.current?.reloadAndRest?.();
+  useEffect(() => {
+    getUsers()
+      .then(setUsers)
+      .catch(() => messageApi.error('Failed to load users from API'));
+  }, [messageApi]);
 
-      messageApi.success('Deleted successfully and will refresh soon');
-    },
-    onError: () => {
-      messageApi.error('Delete failed, please try again');
-    },
-  });
+  const userOptions = useMemo(
+    () => users.map((user) => ({ label: `${user.fullName} (${user.email})`, value: user.id })),
+    [users],
+  );
 
-  const columns: ProColumns<API.RuleListItem>[] = [
+  const userNameById = useMemo(
+    () => new Map(users.map((user) => [user.id, user.fullName])),
+    [users],
+  );
+
+  const columns: ProColumns<TicketDto>[] = [
     {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.updateForm.ruleName.nameLabel"
-          defaultMessage="Rule name"
-        />
-      ),
-      dataIndex: 'name',
-      render: (dom, entity) => {
-        return (
-          <a
-            onClick={() => {
-              setCurrentRow(entity);
-              setShowDetail(true);
-            }}
-          >
-            {dom}
-          </a>
-        );
-      },
+      title: 'Title',
+      dataIndex: 'title',
     },
     {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleDesc"
-          defaultMessage="Description"
-        />
-      ),
-      dataIndex: 'desc',
-      valueType: 'textarea',
-    },
-    {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleCallNo"
-          defaultMessage="Number of service calls"
-        />
-      ),
-      dataIndex: 'callNo',
-      sorter: true,
-      hideInForm: true,
-      renderText: (val: string) =>
-        `${val}${intl.formatMessage({
-          id: 'pages.searchTable.tenThousand',
-          defaultMessage: ' 万 ',
-        })}`,
-    },
-    {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleStatus"
-          defaultMessage="Status"
-        />
-      ),
-      dataIndex: 'status',
-      hideInForm: true,
+      title: 'Priority',
+      dataIndex: 'priority',
+      render: (_, record) => <Tag color={priorityMap[record.priority].color}>{priorityMap[record.priority].text}</Tag>,
+      filters: true,
+      onFilter: true,
       valueEnum: {
-        0: {
-          text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.default"
-              defaultMessage="Shut down"
-            />
-          ),
-          status: 'Default',
-        },
-        1: {
-          text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.running"
-              defaultMessage="Running"
-            />
-          ),
-          status: 'Processing',
-        },
-        2: {
-          text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.online"
-              defaultMessage="Online"
-            />
-          ),
-          status: 'Success',
-        },
-        3: {
-          text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.abnormal"
-              defaultMessage="Abnormal"
-            />
-          ),
-          status: 'Error',
-        },
+        1: { text: 'Low' },
+        2: { text: 'Medium' },
+        3: { text: 'High' },
+        4: { text: 'Critical' },
       },
     },
     {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleUpdatedAt"
-          defaultMessage="Last scheduled time"
-        />
-      ),
-      sorter: true,
-      dataIndex: 'updatedAt',
+      title: 'Status',
+      dataIndex: 'status',
+      render: (_, record) => <Tag color={statusMap[record.status].color}>{statusMap[record.status].text}</Tag>,
+      valueEnum: {
+        1: { text: 'Open' },
+        2: { text: 'In Progress' },
+        3: { text: 'Resolved' },
+        4: { text: 'Closed' },
+      },
+    },
+    {
+      title: 'Created By',
+      dataIndex: 'createdById',
+      render: (_, record) => userNameById.get(record.createdById) || record.createdById,
+    },
+    {
+      title: 'Created At',
+      dataIndex: 'createdAt',
       valueType: 'dateTime',
-      renderFormItem: (item, { defaultRender, ...rest }, form) => {
-        const status = form.getFieldValue('status');
-        if (`${status}` === '0') {
-          return false;
-        }
-        if (`${status}` === '3') {
-          return (
-            <Input
-              {...rest}
-              placeholder={intl.formatMessage({
-                id: 'pages.searchTable.exception',
-                defaultMessage: 'Please enter the reason for the exception!',
-              })}
-            />
-          );
-        }
-        return defaultRender(item);
-      },
     },
     {
-      title: (
-        <FormattedMessage
-          id="pages.searchTable.titleOption"
-          defaultMessage="Operating"
-        />
-      ),
-      dataIndex: 'option',
+      title: 'Actions',
       valueType: 'option',
       render: (_, record) => [
-        <UpdateForm
-          trigger={
-            <a>
-              <FormattedMessage
-                id="pages.searchTable.config"
-                defaultMessage="Configuration"
-              />
-            </a>
-          }
-          key="config"
-          onOk={actionRef.current?.reload}
-          values={record}
-        />,
-        <a key="subscribeAlert" href="https://procomponents.ant.design/">
-          <FormattedMessage
-            id="pages.searchTable.subscribeAlert"
-            defaultMessage="Subscribe to alerts"
-          />
+        <a key="edit" onClick={() => setEditingTicket(record)}>
+          Edit
         </a>,
+        <a
+          key="nextStatus"
+          onClick={async () => {
+            const nextStatus = (record.status === 4 ? 1 : (record.status + 1)) as TicketStatus;
+            await changeTicketStatus(record.id, nextStatus);
+            messageApi.success('Ticket status updated');
+            actionRef.current?.reload();
+          }}
+        >
+          Next status
+        </a>,
+        <Popconfirm
+          key="delete"
+          title="Delete this ticket?"
+          onConfirm={async () => {
+            await deleteTicket(record.id);
+            messageApi.success('Ticket deleted');
+            actionRef.current?.reload();
+          }}
+        >
+          <a>Delete</a>
+        </Popconfirm>,
       ],
     },
   ];
 
-  /**
-   *  Delete node
-   * @zh-CN 删除节点
-   *
-   * @param selectedRows
-   */
-  const handleRemove = useCallback(
-    async (selectedRows: API.RuleListItem[]) => {
-      if (!selectedRows?.length) {
-        messageApi.warning('请选择删除项');
-
-        return;
-      }
-
-      await delRun({
-        data: {
-          key: selectedRows.map((row) => row.key),
-        },
-      });
-    },
-    [delRun, messageApi.warning],
-  );
-
   return (
-    <PageContainer>
+    <PageContainer title="Ticketing API Integration">
       {contextHolder}
-      <ProTable<API.RuleListItem, API.PageParams>
-        headerTitle={intl.formatMessage({
-          id: 'pages.searchTable.title',
-          defaultMessage: 'Enquiry form',
-        })}
+      <ProTable<TicketDto>
         actionRef={actionRef}
-        rowKey="key"
-        search={{
-          labelWidth: 120,
+        rowKey="id"
+        search={false}
+        columns={columns}
+        request={async (params) => {
+          const data = await getTickets({
+            page: params.current,
+            pageSize: params.pageSize,
+          });
+
+          return {
+            data,
+            success: true,
+            total: data.length,
+          };
         }}
         toolBarRender={() => [
-          <CreateForm key="create" reload={actionRef.current?.reload} />,
-        ]}
-        request={rule}
-        columns={columns}
-        rowSelection={{
-          onChange: (_, selectedRows) => {
-            setSelectedRows(selectedRows);
-          },
-        }}
-      />
-      {selectedRowsState?.length > 0 && (
-        <FooterToolbar
-          extra={
-            <div>
-              <FormattedMessage
-                id="pages.searchTable.chosen"
-                defaultMessage="Chosen"
-              />{' '}
-              <a style={{ fontWeight: 600 }}>{selectedRowsState.length}</a>{' '}
-              <FormattedMessage
-                id="pages.searchTable.item"
-                defaultMessage="项"
-              />
-              &nbsp;&nbsp;
-              <span>
-                <FormattedMessage
-                  id="pages.searchTable.totalServiceCalls"
-                  defaultMessage="Total number of service calls"
-                />{' '}
-                {selectedRowsState.reduce(
-                  (pre, item) => pre + (item.callNo ?? 0),
-                  0,
-                )}{' '}
-                <FormattedMessage
-                  id="pages.searchTable.tenThousand"
-                  defaultMessage="万"
-                />
-              </span>
-            </div>
-          }
-        >
-          <Button
-            loading={loading}
-            onClick={() => {
-              handleRemove(selectedRowsState);
+          <ModalForm
+            key="create"
+            title="Create ticket"
+            trigger={<Button type="primary">New ticket</Button>}
+            onFinish={async (values) => {
+              await createTicket({
+                title: values.title,
+                description: values.description,
+                priority: values.priority,
+                createdById: values.createdById,
+              });
+
+              messageApi.success('Ticket created');
+              actionRef.current?.reload();
+              return true;
             }}
           >
-            <FormattedMessage
-              id="pages.searchTable.batchDeletion"
-              defaultMessage="Batch deletion"
+            <ProFormText name="title" label="Title" rules={[{ required: true, min: 3 }]} />
+            <ProFormTextArea
+              name="description"
+              label="Description"
+              rules={[{ required: true, min: 3 }]}
             />
-          </Button>
-          <Button type="primary">
-            <FormattedMessage
-              id="pages.searchTable.batchApproval"
-              defaultMessage="Batch approval"
+            <ProFormSelect
+              name="priority"
+              label="Priority"
+              options={[
+                { label: 'Low', value: 1 },
+                { label: 'Medium', value: 2 },
+                { label: 'High', value: 3 },
+                { label: 'Critical', value: 4 },
+              ]}
+              rules={[{ required: true }]}
             />
-          </Button>
-        </FooterToolbar>
-      )}
+            <ProFormSelect
+              name="createdById"
+              label="Created By"
+              options={userOptions}
+              rules={[{ required: true, message: 'Create a user in API first, then select it here.' }]}
+            />
+          </ModalForm>,
+        ]}
+      />
 
-      <Drawer
-        width={600}
-        open={showDetail}
-        onClose={() => {
-          setCurrentRow(undefined);
-          setShowDetail(false);
+      <ModalForm
+        title="Edit ticket"
+        open={Boolean(editingTicket)}
+        onOpenChange={(open) => {
+          if (!open) {
+            setEditingTicket(undefined);
+          }
         }}
-        closable={false}
+        initialValues={editingTicket}
+        onFinish={async (values) => {
+          if (!editingTicket) {
+            return false;
+          }
+
+          await updateTicket(editingTicket.id, {
+            title: values.title,
+            description: values.description,
+            priority: values.priority,
+          });
+
+          messageApi.success('Ticket updated');
+          setEditingTicket(undefined);
+          actionRef.current?.reload();
+          return true;
+        }}
       >
-        {currentRow?.name && (
-          <ProDescriptions<API.RuleListItem>
-            column={2}
-            title={currentRow?.name}
-            request={async () => ({
-              data: currentRow || {},
-            })}
-            params={{
-              id: currentRow?.name,
-            }}
-            columns={columns as ProDescriptionsItemProps<API.RuleListItem>[]}
-          />
-        )}
-      </Drawer>
+        <ProFormText name="title" label="Title" rules={[{ required: true, min: 3 }]} />
+        <ProFormTextArea name="description" label="Description" rules={[{ required: true, min: 3 }]} />
+        <ProFormSelect
+          name="priority"
+          label="Priority"
+          options={[
+            { label: 'Low', value: 1 },
+            { label: 'Medium', value: 2 },
+            { label: 'High', value: 3 },
+            { label: 'Critical', value: 4 },
+          ]}
+          rules={[{ required: true }]}
+        />
+      </ModalForm>
     </PageContainer>
   );
 };
